@@ -12,3 +12,17 @@ C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.P
 C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.Presentation\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.pdb
 C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.Presentation\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.genruntimeconfig.cache
 C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.Presentation\TopEntertainment.Domain\obj\Debug\net6.0\ref\TopEntertainment.Domain.dll
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\bin\Debug\net6.0\TopEntertainment.Domain.deps.json
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\bin\Debug\net6.0\TopEntertainment.Domain.runtimeconfig.json
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\bin\Debug\net6.0\TopEntertainment.Domain.dll
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\bin\Debug\net6.0\TopEntertainment.Domain.pdb
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.csproj.AssemblyReference.cache
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.AssemblyInfoInputs.cache
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.AssemblyInfo.cs
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.csproj.CoreCompileInputs.cache
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.dll
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\refint\TopEntertainment.Domain.dll
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.pdb
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\TopEntertainment.Domain.genruntimeconfig.cache
+C:\Users\casto\OneDrive\Documents\Proyecto Software\TP-Grupal\TopEntertainment.UsersService\TopEntertainment.Domain\obj\Debug\net6.0\ref\TopEntertainment.Domain.dll
