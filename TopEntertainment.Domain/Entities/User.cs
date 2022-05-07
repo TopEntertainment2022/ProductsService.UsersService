@@ -11,18 +11,12 @@ namespace TopEntertainment.Domain.Entities
     {
         public int UserId { get; set; }
         [Required]
-        [StringLength(255)]
-        public string FirstName { get; set; }
-        [Required]
-        [StringLength(255)]
-        public string LastName { get; set; }
-        [Required]
         [EmailAddress]
         [StringLength(255)]
         public string Email { get; set; }
         [Required]
-        [DataType(DataType.Password)]
-        [StringLength(255)]
-        public string Password { get; set; }
+        public int TipoDeUsuario { get; set; }
+        [Required]
+        public bool SoftDelete { get; set; }
     }
 }
