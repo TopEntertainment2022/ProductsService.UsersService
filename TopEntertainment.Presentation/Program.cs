@@ -13,10 +13,11 @@ builder.Services.AddDbContext<TopEntertainmentDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddTransient<IUsuarioRepository, UsuariosRepository>();
-builder.Services.AddTransient<IUsuarioService, UsuarioServices>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddTransient<IUsuarioRepository, UsuariosRepository>();
+builder.Services.AddTransient<IUsuarioService, UsuarioServices>();
 
 var app = builder.Build();
 

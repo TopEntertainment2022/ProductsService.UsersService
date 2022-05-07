@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TopEntertainment.Application.Services;
 using TopEntertainment.Domain.DTOs;
-using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Presentation.Controllers
 {
@@ -21,36 +20,25 @@ namespace TopEntertainment.Presentation.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception e)
-            {
-                return NoContent();
-            }
+        {         
+            var usuario = _service.GetAll();
+            var usuarioMapped = _mapper.Map<List<UserDto>>(usuario);
+
+            return Ok(usuarioMapped);         
         }
 
         [HttpGet("{id}")]
-         async Task<IActionResult> Get(int id)
-        {
-            try
-            {
-                var usuario = _service.GetUserById(id);
-                var usuarioMapped = _mapper.Map<UserDto>(User);
-                if(usuario == null)
-                {
-                    return NotFound();
-                }
+         public async Task<IActionResult> Get(int id)
+         { 
+             var usuario = _service.GetUserById(id);
+             var usuarioMapped = _mapper.Map<UserDto>(usuario);
+             if(usuario == null)
+             {
+                return NotFound();
+             }
 
-                return Ok(usuarioMapped);
-            }
-            catch (Exception e)
-            {
-                return NoContent();
-            }
-        }
+             return Ok(usuarioMapped);
+         }
 
         [HttpPost]
         public async Task<IActionResult> Post()

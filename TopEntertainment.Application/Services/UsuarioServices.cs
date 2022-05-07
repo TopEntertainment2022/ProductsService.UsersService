@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TopEntertainment.Domain.Commands;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Application.Services
@@ -14,22 +10,22 @@ namespace TopEntertainment.Application.Services
     }
     public class UsuarioServices : IUsuarioService
     {
-        private readonly IUsuarioService _userService;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public UsuarioServices(IUsuarioService userService)
+        public UsuarioServices(IUsuarioRepository usuarioRepository)
         {
-            _userService = userService;
+            _usuarioRepository = usuarioRepository;
         }
 
         public List<User> GetAll()
         {
-            return _userService.GetAll();
+            return _usuarioRepository.GetAll();
             
         }
 
         public User GetUserById(int id)
         {
-            return _userService.GetUserById(id);
+            return _usuarioRepository.GetUserById(id);
         }
     }
 }
