@@ -1,11 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using TopEntertainment.Application.Services;
+using TopEntertainment.Domain.DTOs;
+using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Presentation.Controllers
 {
     [ApiController]
     [Route("api/users")]
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
+        private readonly IUsuarioService _service;
+        private readonly IMapper _mapper;
+
+        public UsersController(IUsuarioService service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -20,11 +33,18 @@ namespace TopEntertainment.Presentation.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+         async Task<IActionResult> Get(int id)
         {
             try
             {
-                return Ok();
+                var usuario = _service.GetUserById(id);
+                var usuarioMapped = _mapper.Map<UserDto>(User);
+                if(usuario == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(usuarioMapped);
             }
             catch (Exception e)
             {

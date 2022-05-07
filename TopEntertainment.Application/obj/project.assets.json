@@ -1003,7 +1003,6 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.4",
-          "Microsoft.Identity.Web": "1.23.1",
           "TopEntertainment.Domain": "1.0.0"
         },
         "compile": {

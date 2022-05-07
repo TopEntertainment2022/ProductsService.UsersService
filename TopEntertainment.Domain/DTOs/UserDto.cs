@@ -10,6 +10,7 @@ namespace TopEntertainment.Domain.DTOs
 {
     public class UserDto
     {
+        public int UserId { get; set; }
         [Required]
         [StringLength(255)]
         public string FirstName { get; set; }
