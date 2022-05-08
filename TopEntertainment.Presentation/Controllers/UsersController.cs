@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TopEntertainment.Application.Services;
 using TopEntertainment.Domain.DTOs;
+using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Presentation.Controllers
 {
@@ -20,64 +21,103 @@ namespace TopEntertainment.Presentation.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
-        {         
-            var usuario = _service.GetAll();
-            var usuarioMapped = _mapper.Map<List<UserDto>>(usuario);
-
-            return Ok(usuarioMapped);         
-        }
-
-        [HttpGet("{id}")]
-         public async Task<IActionResult> Get(int id)
-         { 
-             var usuario = _service.GetUserById(id);
-             var usuarioMapped = _mapper.Map<UserDto>(usuario);
-             if(usuario == null)
-             {
-                return NotFound();
-             }
-
-             return Ok(usuarioMapped);
-         }
-
-        [HttpPost]
-        public async Task<IActionResult> Post()
         {
             try
             {
-                return Ok();
+                var usuario = _service.GetAll();
+                var usuarioMapped = _mapper.Map<List<UserDto>>(usuario);
+                if (usuario == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(usuarioMapped);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var usuario = _service.GetUserById(id);
+                var usuarioMapped = _mapper.Map<UserDto>(usuario);
+
+                if (usuario == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(usuarioMapped);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Post(UserDto UserDto)
+        {
+            try
+            {
+                var userCreado = _mapper.Map<User>(UserDto);
+                var usuarioCreado = _service.InsertUser(UserDto);
+
+                if (usuarioCreado != null)
+                {
+                    return Created("Usuario/", userCreado);
+                }
+                return BadRequest();
             }
             catch (Exception e)
             {
-                return NoContent();
+                return BadRequest(e.Message);
             }
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(int id)
+        public async Task<IActionResult> Put(UserDto userDto)
         {
             try
             {
-                return Ok();
+                var usuario = _service.GetUserById(userDto.UserId);
+                if (usuario==null)
+                {
+                    return NotFound();
+                }
+                _mapper.Map(userDto, usuario);
+                _service.UpdateUser(usuario);
+                return Ok(usuario);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return NoContent();
+
+                return StatusCode(500, "Internal Server Error");
             }
         }
-
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                return Ok();
-            }
-            catch (Exception e)
-            {
+                var usuario = _service.GetUserById(id);
+
+                if (usuario == null)
+                {
+                    return NotFound();
+                }
+
+                _service.DeleteUser(usuario);
                 return NoContent();
             }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
         }
-
     }
 }

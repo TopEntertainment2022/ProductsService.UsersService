@@ -11,7 +11,6 @@ namespace TopEntertainment.Domain.DTOs
     public class UserDto
     {
         public int UserId { get; set; }
-
         [Required]
         [EmailAddress]
         [StringLength(255)]
