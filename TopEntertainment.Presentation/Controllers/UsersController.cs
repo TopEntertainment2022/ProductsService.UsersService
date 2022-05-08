@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TopEntertainment.Application.Services;
 using TopEntertainment.Domain.DTOs;
+using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Presentation.Controllers
 {
@@ -19,65 +20,110 @@ namespace TopEntertainment.Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {         
-            var usuario = _service.GetAll();
-            var usuarioMapped = _mapper.Map<List<UserDto>>(usuario);
+        public IActionResult GetAll()
+        {
+            try
+            {
+                var usuario = _service.GetAll();
+                var usuarioMapped = _mapper.Map<List<UserDto>>(usuario);
 
-            return Ok(usuarioMapped);         
+                return Ok(usuarioMapped);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+                     
         }
 
         [HttpGet("{id}")]
          public async Task<IActionResult> Get(int id)
-         { 
-             var usuario = _service.GetUserById(id);
-             var usuarioMapped = _mapper.Map<UserDto>(usuario);
-             if(usuario == null)
-             {
-                return NotFound();
-             }
-
-             return Ok(usuarioMapped);
+        {
+            try
+            {
+                var usuario = _service.GetUserById(id);
+                var usuarioMapped = _mapper.Map<UserDto>(usuario);
+                if (usuario == null)
+                {
+                    return NotFound();
+                }
+                return Ok(usuarioMapped);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }                        
          }
 
         [HttpPost]
-        public async Task<IActionResult> Post()
+        public IActionResult CreateUser([FromBody] UserDto usuario)
         {
             try
             {
-                return Ok();
+                var usuarioCreado = _service.CreateUser(usuario);
+
+                if (usuarioCreado != null)
+                {
+                    var userCreado = _mapper.Map<UserDto>(usuarioCreado);
+                    return Created("Usuario/", userCreado);
+                }
+                
+                return BadRequest();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                return NoContent();
-            }
+                return BadRequest(e.Message);
+            }                                       
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Put(int id)
+        [HttpPut("{id}")]
+        public IActionResult UpdateUser(int id, UserDto user)
         {
             try
             {
-                return Ok();
-            }
-            catch (Exception e)
-            {
+                if (user == null)
+                {
+                    return BadRequest("Completar todos los campos para realizar la actualizacion");
+                }
+
+                var userUpdate = _service.GetUserById(id);
+
+                if (userUpdate == null)
+                {
+                    return NotFound();
+                }
+
+                _mapper.Map(user, userUpdate);
+                _service.Update(userUpdate);
+
                 return NoContent();
             }
+            catch(Exception)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }
+            
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
-        {
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id)
+        {          
             try
             {
-                return Ok();
-            }
-            catch (Exception e)
-            {
+                var usuario = _service.GetUserById(id);
+
+                if (usuario == null)
+                {
+                    return NotFound();
+                }
+
+                _service.Delete(usuario);
                 return NoContent();
             }
+            catch(Exception)
+            {
+                return StatusCode(500, "Internal Server Error");
+            }                                 
         }
-
     }
 }

@@ -11,7 +11,7 @@ using TopEntertainment.AccessData;
 namespace TopEntertainment.AccessData.Migrations
 {
     [DbContext(typeof(TopEntertainmentDbContext))]
-    [Migration("20220507170010_init")]
+    [Migration("20220508003626_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,20 +36,8 @@ namespace TopEntertainment.AccessData.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
 
                     b.HasKey("UserId");
 
