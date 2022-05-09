@@ -96,7 +96,7 @@ namespace TopEntertainment.Presentation.Controllers
                 _mapper.Map(user, userUpdate);
                 _service.Update(userUpdate);
 
-                return NoContent();
+                return Ok("Usuario actualizado");
             }
             catch(Exception e)
             {
