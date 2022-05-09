@@ -15,6 +15,8 @@ namespace TopEntertainment.Domain.DTOs
         [EmailAddress]
         [StringLength(255)]
         public string Email { get; set; }
+        [Required]
+        public int TipoDeUsuario { get; set; }
         public bool SoftDelete { get; set; }
     }
 }

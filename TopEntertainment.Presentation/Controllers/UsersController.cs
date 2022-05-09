@@ -29,9 +29,9 @@ namespace TopEntertainment.Presentation.Controllers
 
                 return Ok(usuarioMapped);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(e.Message);
             }
                      
         }
@@ -49,9 +49,9 @@ namespace TopEntertainment.Presentation.Controllers
                 }
                 return Ok(usuarioMapped);
             }
-            catch(Exception ex)
+            catch(Exception e)
             {
-                return StatusCode(500, "Internal Server Error");
+                return BadRequest(e.Message);
             }                        
          }
 
@@ -98,11 +98,10 @@ namespace TopEntertainment.Presentation.Controllers
 
                 return NoContent();
             }
-            catch(Exception)
+            catch(Exception e)
             {
-                return StatusCode(500, "Internal Server Error");
-            }
-            
+                return BadRequest(e.Message);
+            }           
         }
 
         [HttpDelete("{id}")]
@@ -118,11 +117,11 @@ namespace TopEntertainment.Presentation.Controllers
                 }
 
                 _service.Delete(usuario);
-                return NoContent();
+                return Ok("Usuario eliminado");
             }
-            catch(Exception)
+            catch(Exception e)
             {
-                return StatusCode(500, "Internal Server Error");
+                return BadRequest(e.Message);
             }                                 
         }
     }
