@@ -18,5 +18,7 @@ namespace TopEntertainment.AccessData
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Valoration> Valorations { get; set; }
+        public virtual DbSet<Opinion> Opinions { get; set; }
     }
 }

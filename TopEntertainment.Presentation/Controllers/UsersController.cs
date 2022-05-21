@@ -32,8 +32,7 @@ namespace TopEntertainment.Presentation.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }
-                     
+            }                   
         }
 
         [HttpGet("{id}")]
