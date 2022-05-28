@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TopEntertainment.AccessData;
 
@@ -11,9 +12,10 @@ using TopEntertainment.AccessData;
 namespace TopEntertainment.AccessData.Migrations
 {
     [DbContext(typeof(TopEntertainmentDbContext))]
-    partial class TopEntertainmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220528123832_opinions")]
+    partial class opinions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,6 +9,10 @@ namespace TopEntertainment.Domain.Entities
 {
     public class User
     {
+        public User()
+        {
+            Opinions = new HashSet<Opinion>();
+        }
         public int UserId { get; set; }
         [Required]
         [EmailAddress]
@@ -17,5 +21,6 @@ namespace TopEntertainment.Domain.Entities
         [Required]
         public int TipoDeUsuario { get; set; }
         public bool SoftDelete { get; set; }
+        public virtual ICollection<Opinion> Opinions { get; set; }
     }
 }
