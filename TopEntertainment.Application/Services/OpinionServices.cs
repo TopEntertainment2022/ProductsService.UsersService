@@ -1,20 +1,19 @@
 ﻿using AutoMapper;
 using TopEntertainment.Domain.Commands;
-using TopEntertainment.Domain.DTOs;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Application.Services
 {
     public interface IOpinionService
     {
-        List<Opinion> GetAllOpinions();
+        List<Opinion> GetAllOpinions();//
         List<int> GetOpinionsByJuegoId(int id);
-        Opinion GetOpinionById(int id);
-        void AddOpinion(Opinion opinion);
+        Opinion GetOpinionById(int id);//
+        void AddOpinion(Opinion opinion);//
         void Update(Opinion opinion);
         void Delete(Opinion opinion);
     }
-    public class OpinionServices:IOpinionService
+    public class OpinionServices : IOpinionService
     {
         private readonly IOpinionRepository _OpinionRepository;
         private readonly IMapper _mapper;

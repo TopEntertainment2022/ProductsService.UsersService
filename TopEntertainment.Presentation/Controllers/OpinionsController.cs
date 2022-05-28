@@ -34,7 +34,7 @@ namespace TopEntertainment.Presentation.Controllers
             }
         }
         [HttpPost]
-        public IActionResult CreateOpinion([FromBody] OpinionDto opinion)
+        public IActionResult CreateOpinion([FromBody] OpinionCreatedDto opinion)
         {
             try
             {
@@ -43,8 +43,8 @@ namespace TopEntertainment.Presentation.Controllers
                 if (opinionEntity != null)
                 {
                     _serviceOpinion.AddOpinion(opinionEntity);
-                    var OpinionDto = _mapper.Map<OpinionDto>(opinionEntity);                  
-                    return Created("Usuario/", OpinionDto);
+                    var OpinionDto = _mapper.Map<OpinionDto>(opinionEntity);
+                    return Created("Opinion/", OpinionDto);
                 }
                 //var opinionCreada = _serviceOpinion.AddOpinion(opinion);
 
@@ -55,6 +55,71 @@ namespace TopEntertainment.Presentation.Controllers
                 //}
 
                 return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var opinion = _serviceOpinion.GetOpinionById(id);
+                var opinionMapped = _mapper.Map<OpinionDto>(opinion);
+                if (opinion == null)
+                {
+                    return NotFound();
+                }
+                return Ok(opinionMapped);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpPut("{id}")]
+        public IActionResult UpdateUser(int id, OpinionUpdateDto opinion)
+        {
+            try
+            {
+                if (opinion == null)
+                {
+                    return BadRequest("Completar todos los campos para realizar la actualizacion");
+                }
+
+                var opinionUpdate = _serviceOpinion.GetOpinionById(id);
+
+                if (opinionUpdate == null)
+                {
+                    return NotFound();
+                }
+
+                _mapper.Map(opinion, opinionUpdate);
+                _serviceOpinion.Update(opinionUpdate);
+
+                return Ok("Actualizado");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id)
+        {
+            try
+            {
+                var opinion = _serviceOpinion.GetOpinionById(id);
+
+                if (opinion == null)
+                {
+                    return NotFound();
+                }
+
+                _serviceOpinion.Delete(opinion);
+                return Ok("opinion eliminado");
             }
             catch (Exception e)
             {

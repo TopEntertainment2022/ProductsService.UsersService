@@ -1,5 +1,4 @@
-﻿using TopEntertainment.Domain.DTOs;
-using TopEntertainment.Domain.Entities;
+﻿using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Domain.Commands
 {

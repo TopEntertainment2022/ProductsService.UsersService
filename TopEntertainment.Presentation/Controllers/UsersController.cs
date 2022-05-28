@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TopEntertainment.Application.Services;
 using TopEntertainment.Domain.DTOs;
-using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.Presentation.Controllers
 {
@@ -32,11 +31,11 @@ namespace TopEntertainment.Presentation.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }                   
+            }
         }
 
         [HttpGet("{id}")]
-         public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
             try
             {
@@ -48,11 +47,11 @@ namespace TopEntertainment.Presentation.Controllers
                 }
                 return Ok(usuarioMapped);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }                        
-         }
+            }
+        }
 
         [HttpPost]
         public IActionResult CreateUser([FromBody] UserDto usuario)
@@ -66,13 +65,13 @@ namespace TopEntertainment.Presentation.Controllers
                     var userCreado = _mapper.Map<UserDto>(usuarioCreado);
                     return Created("Usuario/", userCreado);
                 }
-                
+
                 return BadRequest();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }                                       
+            }
         }
 
         [HttpPut("{id}")]
@@ -97,15 +96,15 @@ namespace TopEntertainment.Presentation.Controllers
 
                 return Ok("Usuario actualizado");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }           
+            }
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
-        {          
+        {
             try
             {
                 var usuario = _service.GetUserById(id);
@@ -118,10 +117,10 @@ namespace TopEntertainment.Presentation.Controllers
                 _service.Delete(usuario);
                 return Ok("Usuario eliminado");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }                                 
+            }
         }
     }
 }

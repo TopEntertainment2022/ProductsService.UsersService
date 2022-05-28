@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using TopEntertainment.Domain.Commands;
-using TopEntertainment.Domain.DTOs;
+﻿using TopEntertainment.Domain.Commands;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.AccessData.Commands
@@ -10,7 +8,7 @@ namespace TopEntertainment.AccessData.Commands
         private readonly TopEntertainmentDbContext _context;
         public UsuariosRepository(TopEntertainmentDbContext context)
         {
-           _context = context;
+            _context = context;
         }
 
         public List<User> GetAll()

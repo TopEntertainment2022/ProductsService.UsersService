@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TopEntertainment.Domain.Commands;
+﻿using TopEntertainment.Domain.Commands;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.AccessData.Commands
 {
-    public class OpinionRepository:IOpinionRepository
+    public class OpinionRepository : IOpinionRepository
     {
         private readonly TopEntertainmentDbContext _context;
         public OpinionRepository(TopEntertainmentDbContext context)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TopEntertainment.Domain.DTOs
+﻿namespace TopEntertainment.Domain.DTOs
 {
     public class OpinionDto
     {

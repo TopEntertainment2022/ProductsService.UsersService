@@ -24,7 +24,7 @@ namespace TopEntertainment.Application.Services
             _usuarioRepository = usuarioRepository;
             _mapper = mapper;
         }
-        
+
         public List<User> GetAll()
         {
             return _usuarioRepository.GetAll();
