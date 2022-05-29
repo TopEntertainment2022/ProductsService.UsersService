@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.AccessData
@@ -18,7 +13,7 @@ namespace TopEntertainment.AccessData
         }
 
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Valoration> Valorations { get; set; }
+        //public virtual DbSet<Valoration> Valorations { get; set; }
         public virtual DbSet<Opinion> Opinions { get; set; }
     }
 }

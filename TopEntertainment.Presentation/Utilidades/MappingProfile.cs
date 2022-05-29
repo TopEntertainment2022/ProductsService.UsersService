@@ -9,6 +9,9 @@ namespace TopEntertainment.Presentation.Utilidades
         public MappingProfile()
         {
             CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<Opinion, OpinionDto>().ReverseMap();
+            CreateMap<Opinion, OpinionUpdateDto>().ReverseMap();
+            CreateMap<Opinion, OpinionCreatedDto>().ReverseMap();
         }
     }
 }

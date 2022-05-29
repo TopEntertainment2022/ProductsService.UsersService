@@ -18,6 +18,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient<IUsuarioRepository, UsuariosRepository>();
 builder.Services.AddTransient<IUsuarioService, UsuarioServices>();
+builder.Services.AddTransient<IOpinionRepository, OpinionRepository>();
+builder.Services.AddTransient<IOpinionService, OpinionServices>();
+
 
 var app = builder.Build();
 
