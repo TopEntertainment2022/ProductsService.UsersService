@@ -44,7 +44,7 @@ namespace TopEntertainment.Presentation.Controllers
                 {
                     _serviceOpinion.AddOpinion(opinionEntity);
                     var OpinionDto = _mapper.Map<OpinionDto>(opinionEntity);
-                    return Created("Opinion/", OpinionDto);
+                    return Ok("Created Opinion");
                 }
                 //var opinionCreada = _serviceOpinion.AddOpinion(opinion);
 
@@ -79,8 +79,23 @@ namespace TopEntertainment.Presentation.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpGet("{Id}")]
+        public IActionResult GetOpinionUserId(int id)
+        {
+            try
+            {
+                var opinion = _serviceOpinion.GetOpinionsByUserId(id);
+                var opinionMapped = _mapper.Map<List<OpinionDto>>(opinion);
+                
+                return Ok(opinionMapped);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         [HttpPut("{id}")]
-        public IActionResult UpdateUser(int id, OpinionUpdateDto opinion)
+        public IActionResult UpdateOpinion(int id, OpinionUpdateDto opinion)
         {
             try
             {
@@ -107,7 +122,7 @@ namespace TopEntertainment.Presentation.Controllers
             }
         }
         [HttpDelete("{id}")]
-        public IActionResult DeleteUser(int id)
+        public IActionResult DeleteOpinion(int id)
         {
             try
             {

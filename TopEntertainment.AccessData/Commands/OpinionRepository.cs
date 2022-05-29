@@ -1,4 +1,5 @@
 ﻿using TopEntertainment.Domain.Commands;
+using TopEntertainment.Domain.DTOs;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.AccessData.Commands
@@ -32,9 +33,10 @@ namespace TopEntertainment.AccessData.Commands
             return _context.Opinions.FirstOrDefault(Opinion => Opinion.OpinionId == id);
         }
 
-        public List<int> GetOpinionsByJuegoId(int id)
+        public List<Opinion> GetOpinionsByUserId(int id)
         {
-            throw new NotImplementedException();
+            return _context.Opinions.Where(Opinion => Opinion.UserId == id).ToList();
+
         }
 
         public void Update(Opinion opinion)
