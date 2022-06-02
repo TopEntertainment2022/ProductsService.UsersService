@@ -54,16 +54,16 @@ namespace TopEntertainment.Presentation.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserDto usuario)
+        public IActionResult CreateUser([FromForm] UserDto usuario)
         {
             try
             {
-                var usuarioCreado = _service.CreateUser(usuario);
+                var usuarioEntidad = _service.CreateUser(usuario);
 
-                if (usuarioCreado != null)
+                if (usuarioEntidad != null)
                 {
-                    var userCreado = _mapper.Map<UserDto>(usuarioCreado);
-                    return Created("Usuario/", userCreado);
+                    var userCreado = _mapper.Map<UserDto>(usuarioEntidad);
+                    return Ok("user created");
                 }
 
                 return BadRequest();
