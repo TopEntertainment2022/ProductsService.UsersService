@@ -7,6 +7,7 @@ namespace TopEntertainment.Domain.Entities
         public User()
         {
             Opinions = new HashSet<Opinion>();
+            Valorations=new HashSet<Valoration>();
         }
         public int UserId { get; set; }
         [Required]
@@ -17,5 +18,6 @@ namespace TopEntertainment.Domain.Entities
         public int TipoDeUsuario { get; set; }
         public bool SoftDelete { get; set; }
         public virtual ICollection<Opinion> Opinions { get; set; }
+        public virtual ICollection<Valoration> Valorations { get; set; }
     }
 }

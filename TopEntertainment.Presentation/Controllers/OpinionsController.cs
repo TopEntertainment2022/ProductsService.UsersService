@@ -46,14 +46,7 @@ namespace TopEntertainment.Presentation.Controllers
                     var OpinionDto = _mapper.Map<OpinionDto>(opinionEntity);
                     return Ok("Created Opinion");
                 }
-                //var opinionCreada = _serviceOpinion.AddOpinion(opinion);
-
-                //if (opinionCreada != null)
-                //{
-                //    var userCreado = _mapper.Map<OpinionDto>(opinionCreada);
-                //    return Created("Usuario/", userCreado);
-                //}
-
+            
                 return BadRequest();
             }
             catch (Exception e)
@@ -62,7 +55,7 @@ namespace TopEntertainment.Presentation.Controllers
             }
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetOpinion(int id)
         {
             try
             {
@@ -79,21 +72,21 @@ namespace TopEntertainment.Presentation.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [HttpGet("{Id}")]
-        public IActionResult GetOpinionUserId(int id)
-        {
-            try
-            {
-                var opinion = _serviceOpinion.GetOpinionsByUserId(id);
-                var opinionMapped = _mapper.Map<List<OpinionDto>>(opinion);
-                
-                return Ok(opinionMapped);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+        //[HttpGet("{Id}")]
+        //public IActionResult GetOpinionUserId(int id)
+        //{
+        //    try
+        //    {
+        //        var opinion = _serviceOpinion.GetOpinionsByUserId(id);
+        //        var opinionMapped = _mapper.Map<List<OpinionDto>>(opinion);
+
+        //        return Ok(opinionMapped);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return BadRequest(e.Message);
+        //    }
+        //}
         [HttpPut("{id}")]
         public IActionResult UpdateOpinion(int id, OpinionUpdateDto opinion)
         {
@@ -134,33 +127,12 @@ namespace TopEntertainment.Presentation.Controllers
                 }
 
                 _serviceOpinion.Delete(opinion);
-                return Ok("opinion eliminado");
+                return Ok("Opinion Delete");
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
-
-        //[HttpPost]
-        //public IActionResult CreateValoration([FromBody] UserDto usuario)
-        //{
-        //    try
-        //    {
-        //        var usuarioCreado = _service.CreateUser(usuario);
-
-        //        if (usuarioCreado != null)
-        //        {
-        //            var userCreado = _mapper.Map<UserDto>(usuarioCreado);
-        //            return Created("Usuario/", userCreado);
-        //        }
-
-        //        return BadRequest();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return BadRequest(e.Message);
-        //    }
-        //}
     }
 }
