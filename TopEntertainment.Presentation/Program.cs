@@ -20,6 +20,8 @@ builder.Services.AddTransient<IUsuarioRepository, UsuariosRepository>();
 builder.Services.AddTransient<IUsuarioService, UsuarioServices>();
 builder.Services.AddTransient<IOpinionRepository, OpinionRepository>();
 builder.Services.AddTransient<IOpinionService, OpinionServices>();
+builder.Services.AddTransient<IValuationRepository, ValuationRepository>();
+builder.Services.AddTransient<IValuationService, ValuationService>();
 
 
 var app = builder.Build();

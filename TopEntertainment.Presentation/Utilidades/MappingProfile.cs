@@ -12,6 +12,7 @@ namespace TopEntertainment.Presentation.Utilidades
             CreateMap<Opinion, OpinionDto>().ReverseMap();
             CreateMap<Opinion, OpinionUpdateDto>().ReverseMap();
             CreateMap<Opinion, OpinionCreatedDto>().ReverseMap();
+            CreateMap<Valuation, ValuationDto>().ReverseMap();
         }
     }
 }

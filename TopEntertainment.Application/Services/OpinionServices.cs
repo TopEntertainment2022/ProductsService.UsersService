@@ -16,11 +16,9 @@ namespace TopEntertainment.Application.Services
     public class OpinionServices : IOpinionService
     {
         private readonly IOpinionRepository _OpinionRepository;
-        private readonly IMapper _mapper;
-        public OpinionServices(IOpinionRepository iOpinionRepository, IMapper mapper)
+        public OpinionServices(IOpinionRepository iOpinionRepository)
         {
             _OpinionRepository = iOpinionRepository;
-            _mapper = mapper;
         }
 
         public void AddOpinion(Opinion opinion)

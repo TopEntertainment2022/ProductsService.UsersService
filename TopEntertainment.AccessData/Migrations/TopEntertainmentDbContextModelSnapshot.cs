@@ -74,6 +74,28 @@ namespace TopEntertainment.AccessData.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("TopEntertainment.Domain.Entities.Valuation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Valoracion")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Valuations");
+                });
+
             modelBuilder.Entity("TopEntertainment.Domain.Entities.Opinion", b =>
                 {
                     b.HasOne("TopEntertainment.Domain.Entities.User", "User")

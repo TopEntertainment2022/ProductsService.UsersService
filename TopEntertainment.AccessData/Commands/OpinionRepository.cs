@@ -1,5 +1,4 @@
 ﻿using TopEntertainment.Domain.Commands;
-using TopEntertainment.Domain.DTOs;
 using TopEntertainment.Domain.Entities;
 
 namespace TopEntertainment.AccessData.Commands
