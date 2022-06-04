@@ -6,10 +6,9 @@ namespace TopEntertainment.Application.Services
 {
     public interface IOpinionService
     {
-        List<Opinion> GetAllOpinions();//
-        List<Opinion> GetOpinionsByUserId(int id);
-        Opinion GetOpinionById(int id);//
-        void AddOpinion(Opinion opinion);//
+        List<Opinion> GetAllOpinions();
+        Opinion GetOpinionById(int id);
+        void AddOpinion(Opinion opinion);
         void Update(Opinion opinion);
         void Delete(Opinion opinion);
     }
@@ -41,11 +40,6 @@ namespace TopEntertainment.Application.Services
         public Opinion GetOpinionById(int id)
         {
             return _OpinionRepository.GetOpinionById(id);
-        }
-
-        public List<Opinion> GetOpinionsByUserId(int id)
-        {
-            return _OpinionRepository.GetOpinionsByUserId(id);
         }
 
         public void Update(Opinion opinion)
