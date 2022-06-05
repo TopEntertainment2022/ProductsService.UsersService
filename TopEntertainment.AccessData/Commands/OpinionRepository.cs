@@ -31,18 +31,6 @@ namespace TopEntertainment.AccessData.Commands
         {
             return _context.Opinions.FirstOrDefault(Opinion => Opinion.OpinionId == id);
         }
-
-        public List<Opinion> GetOpinionsByUserId(int id)
-        {
-            return _context.Opinions.Where(Opinion => Opinion.UserId == id).ToList();
-
-        }
-
-        public void Update(Opinion opinion)
-        {
-            _context.Update(opinion);
-            _context.SaveChanges();
-        }
     }
 }
 
