@@ -43,7 +43,7 @@ namespace TopEntertainment.Presentation.Controllers
                 var usuarioMapped = _mapper.Map<UserDto>(usuario);
                 if (usuario == null)
                 {
-                    return NotFound();
+                    return NotFound("Usuario Inexistente");
                 }
                 return Ok(usuarioMapped);
             }
@@ -63,7 +63,7 @@ namespace TopEntertainment.Presentation.Controllers
                 if (usuarioEntidad != null)
                 {
                     var userCreado = _mapper.Map<UserDto>(usuarioEntidad);
-                    return Ok("user created");
+                    return Ok("Usuario Creado");
                 }
 
                 return BadRequest();
@@ -88,7 +88,7 @@ namespace TopEntertainment.Presentation.Controllers
 
                 if (userUpdate == null)
                 {
-                    return NotFound();
+                    return NotFound("Usuario Inexistente");
                 }
 
                 _mapper.Map(user, userUpdate);
@@ -111,7 +111,7 @@ namespace TopEntertainment.Presentation.Controllers
 
                 if (usuario == null)
                 {
-                    return NotFound();
+                    return NotFound("Usuario Inexistente");
                 }
 
                 _service.Delete(usuario);

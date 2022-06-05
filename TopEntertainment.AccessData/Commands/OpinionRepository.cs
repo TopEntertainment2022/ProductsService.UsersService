@@ -31,11 +31,7 @@ namespace TopEntertainment.AccessData.Commands
         {
             return _context.Opinions.FirstOrDefault(Opinion => Opinion.OpinionId == id);
         }
-        public void Update(Opinion opinion)
-        {
-            _context.Update(opinion);
-            _context.SaveChanges();
-        }
+       
     }
 }
 

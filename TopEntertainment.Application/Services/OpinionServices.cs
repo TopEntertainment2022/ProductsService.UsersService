@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿ using AutoMapper;
 using TopEntertainment.Domain.Commands;
 using TopEntertainment.Domain.Entities;
 
@@ -9,7 +9,6 @@ namespace TopEntertainment.Application.Services
         List<Opinion> GetAllOpinions();
         Opinion GetOpinionById(int id);
         void AddOpinion(Opinion opinion);
-        void Update(Opinion opinion);
         void Delete(Opinion opinion);
     }
     public class OpinionServices : IOpinionService
@@ -22,9 +21,9 @@ namespace TopEntertainment.Application.Services
 
         public void AddOpinion(Opinion opinion)
         {
-            //var opinionMapper = _mapper.Map<Opinion>(opinion);
+            
             _OpinionRepository.Add(opinion);
-            //return opinionMapper;
+      
         }
 
         public void Delete(Opinion opinion)
@@ -40,11 +39,6 @@ namespace TopEntertainment.Application.Services
         public Opinion GetOpinionById(int id)
         {
             return _OpinionRepository.GetOpinionById(id);
-        }
-
-        public void Update(Opinion opinion)
-        {
-            _OpinionRepository.Update(opinion);
         }
     }
 }

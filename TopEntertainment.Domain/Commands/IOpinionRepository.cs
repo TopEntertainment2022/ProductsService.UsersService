@@ -8,7 +8,6 @@ namespace TopEntertainment.Domain.Commands
         List<Opinion> GetAllOpinions();
         Opinion GetOpinionById(int id);
         void Add(Opinion opinion);
-        void Update(Opinion opinion);
         void Delete(Opinion opinion);
     }
 }
