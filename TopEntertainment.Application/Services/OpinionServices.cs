@@ -6,11 +6,9 @@ namespace TopEntertainment.Application.Services
 {
     public interface IOpinionService
     {
-        List<Opinion> GetAllOpinions();//
-        List<Opinion> GetOpinionsByUserId(int id);
-        Opinion GetOpinionById(int id);//
-        void AddOpinion(Opinion opinion);//
-        void Update(Opinion opinion);
+        List<Opinion> GetAllOpinions();
+        Opinion GetOpinionById(int id);
+        void AddOpinion(Opinion opinion);
         void Delete(Opinion opinion);
     }
     public class OpinionServices : IOpinionService
@@ -23,9 +21,7 @@ namespace TopEntertainment.Application.Services
 
         public void AddOpinion(Opinion opinion)
         {
-            //var opinionMapper = _mapper.Map<Opinion>(opinion);
             _OpinionRepository.Add(opinion);
-            //return opinionMapper;
         }
 
         public void Delete(Opinion opinion)
@@ -41,16 +37,6 @@ namespace TopEntertainment.Application.Services
         public Opinion GetOpinionById(int id)
         {
             return _OpinionRepository.GetOpinionById(id);
-        }
-
-        public List<Opinion> GetOpinionsByUserId(int id)
-        {
-            return _OpinionRepository.GetOpinionsByUserId(id);
-        }
-
-        public void Update(Opinion opinion)
-        {
-            _OpinionRepository.Update(opinion);
         }
     }
 }

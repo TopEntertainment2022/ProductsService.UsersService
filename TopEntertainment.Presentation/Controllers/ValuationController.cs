@@ -48,7 +48,7 @@ namespace TopEntertainment.Presentation.Controllers
                 {
                     _serviceValuation.Add(valuationEntity);
                     var OpinionDto = _mapper.Map<ValuationDto>(valuationEntity);
-                    return Ok("Created Valuation");
+                    return Ok("Valoracion Creada");
                 }
 
                 return BadRequest();
@@ -68,7 +68,7 @@ namespace TopEntertainment.Presentation.Controllers
                 var valuationMapped = _mapper.Map<ValuationDto>(valuation);
                 if (valuation == null)
                 {
-                    return NotFound();
+                    return NotFound("Valoracion Inexistente");
                 }
                 return Ok(valuationMapped);
             }
@@ -87,7 +87,7 @@ namespace TopEntertainment.Presentation.Controllers
 
                 if (valuation == null)
                 {
-                    return NotFound();
+                    return NotFound("Valoracion Inexistente");
                 }
 
                 _serviceValuation.Delete(valuation);

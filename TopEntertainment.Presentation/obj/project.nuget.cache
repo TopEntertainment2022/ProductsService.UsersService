@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BH2j9fXuP1HIqwKZR2UFfYPxosrbfl3Jp9LtRw9mSekCsyjaHjXG24Ma2BJWP2QqnHjAsmx1dj2FcBI4Y1ldhQ==",
+  "dgSpecHash": "OSZqxSN7GKl79U7MzMzvx7WP26HiaSZUYijORej2qHnOjOjaYsx4fGt9+3oiX+OvdN11XbrFlcz/zPLzgTNs7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lopez Franco\\Desktop\\Top Entertainment\\TopEntertainment.UsersService\\TopEntertainment.Presentation\\TopEntertainment.Presentation.csproj",
+  "projectFilePath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Presentation\\TopEntertainment.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lopez Franco\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Lopez Franco\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
