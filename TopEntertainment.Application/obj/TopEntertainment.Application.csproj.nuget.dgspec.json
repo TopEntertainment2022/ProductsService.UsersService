@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj": {}
+    "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj": {
+    "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj",
+        "projectUniqueName": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj",
         "projectName": "TopEntertainment.AccessData",
-        "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj",
+        "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj",
         "packagesPath": "C:\\Users\\Lopez Franco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\obj\\",
+        "outputPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj": {
-                "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj"
+              "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj": {
+                "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj"
               }
             }
           }
@@ -92,14 +92,14 @@
         }
       }
     },
-    "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj": {
+    "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj",
         "projectName": "TopEntertainment.Application",
-        "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj",
+        "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Application\\TopEntertainment.Application.csproj",
         "packagesPath": "C:\\Users\\Lopez Franco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Application\\obj\\",
+        "outputPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -120,11 +120,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj": {
-                "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj"
+              "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj": {
+                "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.AccessData\\TopEntertainment.AccessData.csproj"
               },
-              "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj": {
-                "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj"
+              "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj": {
+                "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj"
               }
             }
           }
@@ -187,14 +187,14 @@
         }
       }
     },
-    "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj": {
+    "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj",
         "projectName": "TopEntertainment.Domain",
-        "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj",
+        "projectPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\TopEntertainment.Domain.csproj",
         "packagesPath": "C:\\Users\\Lopez Franco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lopez Franco\\Desktop\\Ms Users\\TopEntertainment.UsersService\\TopEntertainment.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Lopez Franco\\Desktop\\Nueva carpeta (2)\\TopEntertainment.UsersService\\TopEntertainment.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

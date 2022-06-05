@@ -44,21 +44,13 @@ namespace TopEntertainment.Presentation.Controllers
                 {
                     _serviceOpinion.AddOpinion(opinionEntity);
                     var OpinionDto = _mapper.Map<OpinionDto>(opinionEntity);
-                    return Ok("Created Opinion");
+                    return Ok("Opinion Creada");
                 }
-                //var opinionCreada = _serviceOpinion.AddOpinion(opinion);
-
-                //if (opinionCreada != null)
-                //{
-                //    var userCreado = _mapper.Map<OpinionDto>(opinionCreada);
-                //    return Created("Usuario/", userCreado);
-                //}
-
-                return BadRequest();
+                return BadRequest("Opinion Inexistente");
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return BadRequest("Usuario Inexistente");
             }
         }
         [HttpGet("{id}")]
@@ -70,51 +62,9 @@ namespace TopEntertainment.Presentation.Controllers
                 var opinionMapped = _mapper.Map<OpinionDto>(opinion);
                 if (opinion == null)
                 {
-                    return NotFound();
+                    return NotFound("Opinion Inexistente");
                 }
                 return Ok(opinionMapped);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-        [HttpGet("{Id}")]
-        public IActionResult GetOpinionUserId(int id)
-        {
-            try
-            {
-                var opinion = _serviceOpinion.GetOpinionsByUserId(id);
-                var opinionMapped = _mapper.Map<List<OpinionDto>>(opinion);
-                
-                return Ok(opinionMapped);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-        [HttpPut("{id}")]
-        public IActionResult UpdateOpinion(int id, OpinionUpdateDto opinion)
-        {
-            try
-            {
-                if (opinion == null)
-                {
-                    return BadRequest("Completar todos los campos para realizar la actualizacion");
-                }
-
-                var opinionUpdate = _serviceOpinion.GetOpinionById(id);
-
-                if (opinionUpdate == null)
-                {
-                    return NotFound();
-                }
-
-                _mapper.Map(opinion, opinionUpdate);
-                _serviceOpinion.Update(opinionUpdate);
-
-                return Ok("Actualizado");
             }
             catch (Exception e)
             {
@@ -130,11 +80,11 @@ namespace TopEntertainment.Presentation.Controllers
 
                 if (opinion == null)
                 {
-                    return NotFound();
+                    return NotFound("Opinion Inexistente");
                 }
 
                 _serviceOpinion.Delete(opinion);
-                return Ok("opinion eliminado");
+                return Ok("opinion eliminada");
             }
             catch (Exception e)
             {
